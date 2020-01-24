@@ -9,6 +9,7 @@
   	4. saber si esta vacia
   	5. calcular su media
   	6. calcular su desviacion estandar
+	7. imprimirse en un formato comodo para el usuario
 
 ````
 
