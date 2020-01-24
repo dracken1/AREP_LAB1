@@ -67,6 +67,7 @@ public class AppTest
         assertTrue( mean == 59.0 );
     }
 
+
     @Test
     public void shouldSolveStandardSecondColumn()
     {

@@ -6,6 +6,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+
+/**
+ * Class for the own linkedlist, this class implements the List interface, therefore overriding some of its methods.
+ * This linkedlist knows its head and its tail but also its sise, mean, and standard.
+ */
 public class MyMeanStandardLinkedList implements List{
 
     Node head = new Node(0,null);
@@ -15,6 +20,11 @@ public class MyMeanStandardLinkedList implements List{
     int total = 0;
     int innermean;
 
+
+    /**
+     * An inner class of the MyMeanStandardLinkedList to achieve the behaviour of a real linked list,
+     * this class acts as a node, knowing its prior node and its next node.
+     */
     public static class Node{
         int index;
         double data;
@@ -28,11 +38,19 @@ public class MyMeanStandardLinkedList implements List{
         }
     }
 
+    /**
+     * @return the mean of the values within this list.
+     * This function calculates the mean of all the values inside this linkedlist.
+     */
     public double calcMean(){
         mean = total/size;
         return mean;
     }
 
+
+    /**
+     * @return the standard deviation of the values inside this list.
+     */
     public  double calcStandard(){
         double tmp = 0;
         innermean = total/size;
@@ -45,6 +63,11 @@ public class MyMeanStandardLinkedList implements List{
 
 
     // Insert the object o at the end of the list
+
+    /**
+     * @param o a simple number of tipe double
+     * @return true or false if the value was added correctly or not.
+     */
     public boolean add(double o) {
         if(head.next == null && head.data == 0){
             head.data = o;
@@ -85,6 +108,11 @@ public class MyMeanStandardLinkedList implements List{
         }
     }*/
 
+
+    /**
+     * @param list a list of type MyMeanStandardLinkedList
+     * This function prints this list following a certain format.
+     */
     public static void printMyLinkedList(MyMeanStandardLinkedList list){
         Node tail = list.head;
         String myLinkedList = "MyLinkedList: ";
@@ -95,10 +123,17 @@ public class MyMeanStandardLinkedList implements List{
         System.out.printf(myLinkedList);
     }
 
+    /**
+     * @return an integer that represents the size of this list.
+     */
     public int size() {
         return size;
     }
 
+
+    /**
+     * @return true or false if the list is empty or not
+     */
     public boolean isEmpty() {
         return size == 0;
     }
@@ -125,6 +160,10 @@ public class MyMeanStandardLinkedList implements List{
         return false;
     }
 
+    /**
+     * @param o a simple double
+     * @return true if the remove action succeed, false otherwise.
+     */
     public boolean remove(double o) {
         Node tail = head;
         for(int i=0; i<size;i++){
@@ -171,7 +210,10 @@ public class MyMeanStandardLinkedList implements List{
     public void add(int index, Object element) {
 
     }
-
+    /**
+     * @param o a simple double
+     * @return true if the remove action succeed, false otherwise.
+     */
     public Object remove(int index) {
         Node tail = head;
         while(index != tail.index){
